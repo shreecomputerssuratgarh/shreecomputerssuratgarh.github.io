@@ -1,113 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Shree Computers Suratgarh",
+  "description": "Tally, Accounting, Busy, Excel training institute in Suratgarh",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Suratgarh",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  },
+  "telephone": "9414431916"
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shree Computers Suratgarh</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<title>Shree Computers Suratgarh - Accounting & Tally Classes</title>
+<meta name="description" content="Shree Computers Suratgarh – Best Accounting & Tally Classes with 100% practical training for job-oriented skills. Learn Tally, Busy, Excel, and Balance Sheet under Adv Sunil Singhal, 25+ years of experience.">
+<meta name="keywords" content="Tally classes Suratgarh, Accounting classes Suratgarh, Busy software training, Excel for accounts, Balance sheet course, Practical accounting training, Job-oriented accounting coaching">
+<meta name="author" content="Shree Computers Suratgarh">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-    background: #f4f7ff;
-    color: #333;
-}
-
-/* HERO HEADER - 10% HEIGHT */
-.full-hero {
-    background: linear-gradient(135deg, rgba(10,61,145,0.8), rgba(30,94,214,0.8)), url('images/bg.jpg') center/cover no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 25vh;   /* 10% of viewport height */
-    width: 100%;
-    padding: 0 20px;
-}
-
-.full-hero h1 {
+body { margin:0; font-family:'Roboto',sans-serif; color:#333; line-height:1.6; scroll-behavior: smooth; }
+a { text-decoration:none; color:inherit; }
+header { position:relative; background:url('images/bg.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px; }
+header::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:0; }
+header h1, header p, header .btn { position:relative; z-index:1; }
+header h1 {
     font-size: 5rem;   /* fixed size */
     font-weight: 900;
     margin: 0;
-    line-height: 1;
+    line-height: 1;color: aqua;
 }
-
-.full-hero p {
+header p {
     font-size: 2rem;
     margin-top: 4px;
-    font-weight: 600;
+    font-weight: 600;color:bisque;
 }
-
-/* NAVIGATION */
-nav {
-    background: #062a63;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 14px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffd700;
-}
-
-/* SECTIONS */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-section:nth-child(even) {
-    background: #e0ebff;
-}
-
-/* OWNER */
-.owner img {
-    width: 160px;
-    border-radius: 50%;
-    margin-top: 15px;
-    border: 4px solid #0a3d91;
-}
-
-/* COURSES */
-.courses {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 160px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.card img {
-    width: 70px;
-    margin-bottom: 12px;
-}
-
-/* BUTTONS */
+header .btn { padding:12px 25px; margin:5px; border:none; border-radius:5px; cursor:pointer; font-weight:bold; transition: all 0.3s ease; }
+header .btn:hover { transform: scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.3); }
+.btn-primary { background:#fff; color:#1E40AF; }
+.btn-secondary { background:#FACC15; color:#1E40AF; }
 .btn {
     display: inline-block;
     background: #25D366;
@@ -119,7 +55,6 @@ section:nth-child(even) {
     font-weight: bold;
     transition: 0.3s;
 }
-
 .btn:hover {
     background: #128c7e;
 }
@@ -132,186 +67,276 @@ section:nth-child(even) {
     background: #062a63;
 }
 
-/* REVIEWS */
-.reviews {
+.gallery {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 
-.review-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 240px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
+.gallery-card {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.review-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* FIXED */
+    transition: transform 0.5s ease;
 }
 
-.review-card p {
-    margin: 10px 0 0 0;
-    font-style: italic;
+.gallery-card:hover img {
+    transform: scale(1.2);
 }
 
-/* FOOTER */
-footer {
-    background: #0a3d91;
+/* overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 16px;
+    padding: 15px;
+    opacity: 0;
+    transition: 0.4s;
 }
 
-/* FLOATING WHATSAPP BUTTON */
-.floating-wa {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background:#25D366;
-    color:white;
-    padding:18px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:22px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    transition: 0.3s;
+.gallery-card:hover .overlay {
+    opacity: 1;
+}
+.overlay h3 {
+    margin: 0;
+    font-size: 1.3rem;
 }
 
-.floating-wa:hover {
-    background:#128c7e;
-}
+nav#navbar {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
 
-/* MOBILE RESPONSIVE */
-@media(max-width:600px){
-    nav {
-        flex-direction: column;
-    }
-    .reviews {
-        flex-direction: column;
-        align-items: center;
-    }
-    .courses {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-@media(max-width:400px){
-    .full-hero h1 {
-        font-size: 2rem;
-    }
-    .full-hero p {
-        font-size: 0.9rem;
-    }
+    padding: 10px 15px;
+    flex-wrap: wrap;
 }
+nav#navbar div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+nav#navbar a { margin:0 15px; font-weight:bold; color:#1E40AF; transition: color 0.3s; }
+nav#navbar a:hover { color:#FACC15; }
+
+section { padding:60px 20px; text-align:center; }
+h2 { font-size:2rem; margin-bottom:40px; }
+.courses, .who-join-cards, .gallery-cards, .reviews-slider { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.course-card, .who-card, .gallery-card, .review-card { border-radius:12px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; width:250px; transition: transform 0.3s, box-shadow 0.3s; }
+.course-card:hover, .review-card:hover, .gallery-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+#courses { background: linear-gradient(to right, #e0f2fe, #ffffff); }
+#reviews { background: linear-gradient(to right, #f0f0f0, #f8f8f8); overflow:hidden; }
+#certificate { background: linear-gradient(to right, #e0f2fe, #ffffff); }
+.contact-info p { margin:10px 0; }
+footer { background:#1E40AF; color:white; padding:20px; text-align:center; }
+.whatsapp-float { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:28px; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,0.3); }
+.whatsapp-float:hover { transform:scale(1.1); transition:0.2s; }
+#top-contact-banner { position:fixed; top:0; left:0; width:100%; background:#FACC15; color:#1E40AF; display:flex; justify-content:center; align-items:center; padding:10px 0; z-index:2000; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,0.2); cursor:pointer; transition: top 0.3s; }
+img { max-width:100%; border-radius:8px; }
+@media(max-width:768px){ .courses, .who-join-cards, .reviews-slider, .gallery-card {
+        width: 90%;
+        height: 180px;
+    }
+
+    .overlay {
+        opacity: 1;
+    }
+
+    .gallery-card:active img {
+        transform: scale(1.1);
+    }
+	.review-card { min-width:100%; } }
+
 </style>
 </head>
 <body>
 
-<!-- HERO HEADER -->
-<header class="full-hero">
-    <h1>Shree Computers</h1>
-    <p>Suratgarh</p>
-</header>
-
-<!-- NAVIGATION -->
-<nav>
-    <a href="#about">About</a>
-    <a href="#courses">Courses</a>
-    <a href="#who">Join</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
+<!-- Floating Top Contact Banner 
+<div id="top-contact-banner">
+  📞 Call / WhatsApp: <a href="https://wa.me/919414431916" target="_blank" style="margin-left:10px; color:#1E40AF; text-decoration:underline;">9414431916</a>
+</div>
+-->
+<!-- Navbar -->
+<nav id="navbar">
+<div>
+    <img src="images/logo.png" alt="Logo" style="height:50px; width:auto;">
+  </div>  <div>
+<a href="#owner">About</a>
+<a href="#courses">Courses</a>
+<a href="#who-can-join">Who Can Join</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="#certificate">Certificate</a>
+<a href="#contact">Contact</a>  </div>
 </nav>
 
-<!-- ABOUT / OWNER -->
-<section id="about" class="owner">
-    <h2>About Us</h2>
-    <img src="images/owner.jpg" alt="Owner Photo">
-    <p><strong>Owner: Adv. Sunil Singhal</strong></p>
-    <p>Providing practical accounting training with real business data.</p>
+<!-- Hero Section -->
+<header>
+<h1>Shree Computers</h1>
+<p>Best Accounting & Tally Training Institute in Suratgarh with 100% Practical Job-Oriented Courses</p>
+</header>
+
+<!-- Owner Section -->
+<section id="owner">
+<h2>Our Mentor</h2>
+<img src="images/owner.jpg" alt="Adv Sunil Singhal" style="width: 160px; border: 4px solid #0a3d91; border-radius:50%; margin-bottom:15px;">
+<p>Guided by Adv Sunil Singhal – <strong>25+ Years of Accounting & Tally Experience</strong></p>
+<p><strong>Batches:</strong> Morning & Evening</p>
+<p>All training is <strong>100% practical</strong> with real business data for immediate job readiness.</p>
 </section>
 
-<!-- COURSES -->
+<!-- Courses Section -->
 <section id="courses">
-    <h2>Courses</h2>
-    <div class="courses">
-        <div class="card">
-            <img src="images/tally.png"/>
-            <p>Tally</p>
-        </div>
-        <div class="card">
-            <img src="images/busy.png"/>
-            <p>Busy</p>
-        </div>
-        <div class="card">
-            <img src="images/excel.png"/>
-            <p>Excel</p>
-        </div>
-        <div class="card">
-            <img src="images/gst.png"/>
-            <p>GST</p>
-        </div>
+<h2>Our Courses</h2>
+<div class="courses">
+<div class="course-card">
+<img src="images/tally.png" alt="Tally">
+<h3>Tally</h3>
+<p>Complete practical training with real accounting entries. <strong>100% job-oriented practical sessions.</strong></p>
+</div>
+<div class="course-card">
+<img src="images/busy.png" alt="Busy Software">
+<h3>Busy</h3>
+<p>Hands-on bookkeeping using real business data. <strong>Practical and job-focused.</strong></p>
+</div>
+<div class="course-card">
+<img src="images/excel.png" alt="Excel">
+<h3>Excel</h3>
+<p>Advanced Excel for accounting, analysis, and reporting with real data examples.</p>
+</div>
+<div class="course-card">
+<img src="images/bs.png" alt="Balance Sheet">
+<h3>Balance Sheet</h3>
+<p>Learn to prepare and analyze real balance sheets for companies and businesses.</p>
+</div>
+</div>
+</section>
+
+<!-- Who Can Join -->
+<section id="who-can-join">
+<h2>Who Can Join</h2>
+<div class="who-join-cards">
+<div class="who-card"><p><strong>12th Pass</strong></p></div>
+<div class="who-card"><p><strong>B.Com</strong></p></div>
+<div class="who-card"><p><strong>Job Seeker</strong></p></div>
+<div class="who-card"><p><strong>Shop / Business Owner</strong></p></div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+<h2>Our Office & Classroom</h2>
+<div class="gallery">
+
+    <div class="gallery-card">
+        <img src="images/ofc.jpg">
+        <div class="overlay"><h3>Office</h3></div>
     </div>
-    <p style="color:blue; font-weight:bold;" class="highlight">Balance Sheets | Practical Training | Real Data</p>
-    <p style="color:green; font-weight:bold;">Billing & Tax Work Training</p>
-    <p style="color:blue; font-weight:bold;" class="highlight">Certificate Provided</p>
-    <p style="color:green; font-weight:bold;" class="highlight">✔ Trusted by Students for 25+ Years</p>
-    <p style="color:blue; font-weight:bold;" class="highlight">🕒 Morning & Evening Batches Available</p>
+
+    <div class="gallery-card">
+        <img src="images/front.jpg">
+        <div class="overlay"><h3>Front</h3></div>
+    </div>
+<!-- 
+    <div class="gallery-card">
+        <img src="images/ofc.jpg">
+        <div class="overlay"><h3>Training</h3></div>
+    </div>
+
+    <div class="gallery-card">
+        <img src="images/ofc.jpg">
+        <div class="overlay"><h3>Computer Lab</h3></div>
+    </div>
+-->
+</div>
 </section>
 
-<!-- WHO CAN JOIN -->
-<section id="who">
-    <h2>Who Can Join</h2>
-    <p>✔ 12th Pass</p>
-    <p>✔ B.Com Students</p>
-    <p>✔ Job Seekers</p>
-    <p>✔ Shop / Business Owners</p>
-</section>
-
-<!-- STUDENT REVIEWS -->
+<!-- Reviews Section -->
 <section id="reviews">
-    <h2>Student Reviews</h2>
-    <div class="reviews">
-        <div class="review-card">
-            <strong>Rohit</strong>
-            <p>"Excellent practical classes! Got my first job using Tally skills."</p>
-        </div>
-        <div class="review-card">
-            <strong>Priya</strong>
-            <p>"Busy and GST training made my business accounting easy."</p>
-        </div>
-        <div class="review-card">
-            <strong>Vikram</strong>
-            <p>"Instructor is very experienced. Loved the practical approach."</p>
-        </div>
-    </div>
+<h2>What Our Students Say</h2>
+<div class="reviews-slider">
+<div class="review-card">"The best accounting coaching in Suratgarh! Very practical." – <strong>Rohit</strong></div>
+<div class="review-card">"Morning batch was perfect for my schedule. Highly recommended!" – <strong>Priya</strong></div>
+<div class="review-card">"Hands-on learning with real Tally and Busy data. Loved it!" – <strong>Ajay</strong></div>
+<div class="review-card">"25+ years of experience really shows in his teaching." – <strong>Sunita</strong></div>
+</div>
 </section>
 
-<!-- CONTACT -->
+<!-- Certificate -->
+<section id="certificate">
+<h2>Certificate Provided</h2>
+<img src="https://img.icons8.com/color/96/000000/certificate.png" alt="Certificate Icon" style="margin-bottom:15px;">
+<p>All students receive a <strong>certificate of completion</strong> after finishing their course, proving your skills in Tally, Busy, Excel, and balance sheet preparation.</p>
+</section>
+
+<!-- Contact Section -->
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Ward No 29, Near Bansal Nursing Home, Suratgarh</p>
-    <p><strong>Call / WhatsApp:</strong><br>9414431916</p>
-    <a class="btn" href="https://wa.me/919414431916" target="_blank">Chat on WhatsApp</a>
+<h2>Contact Us</h2>
+<div class="contact-info">
+<p>📞 Mobile & WhatsApp: <a href="https://wa.me/919414431916" target="_blank">9414431916</a></p>
+<p>📍 Address: Ward No 29, Near Bansal Nursing Home, Suratgarh, Rajasthan, India</p>
+<p>👤 Owner: Adv Sunil Singhal</p>
+<a class="btn" href="https://wa.me/919414431916" target="_blank">Chat on WhatsApp</a>
     <a class="btn btn-call" href="tel:9414431916">Call Now</a>
 	<a class="btn" href="https://maps.google.com?q=Shree+Computers+Suratgarh" target="_blank">📍 Open in Google Maps</a>
+	<a class="btn" style="background:#E1306C;" href="https://instagram.com/shreecomputerssuratgarh" target="_blank">Instagram</a>
+</div>
+<div id="map" style="margin-top:20px;">
+</div>
 </section>
 
-<!-- FOOTER -->
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919414431916" target="_blank" class="whatsapp-float">💬</a>
+
 <footer>
-    © 2026 Shree Computers | Suratgarh
+&copy; 2026 Shree Computers Suratgarh. All Rights Reserved.
 </footer>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/919414431916" target="_blank" class="floating-wa">💬</a>
+<script>
+// Testimonial slider
+const slider = document.querySelector('.reviews-slider');
+let scrollAmount = 0;
+setInterval(() => {
+  scrollAmount += 320;
+  if(scrollAmount >= slider.scrollWidth) scrollAmount = 0;
+  slider.scrollTo({left:scrollAmount, behavior:'smooth'});
+}, 3000);
+
+// Top contact banner hide/show on scroll
+let lastScrollTop = 0;
+const banner = document.getElementById('top-contact-banner');
+window.addEventListener('scroll', function(){
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if(st > lastScrollTop){
+    banner.style.top='-50px';
+  } else {
+    banner.style.top='0';
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
+});
+</script>
 
 </body>
 </html>
