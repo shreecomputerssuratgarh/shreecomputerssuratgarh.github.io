@@ -24,151 +24,182 @@
 <meta name="author" content="Shree Computers Suratgarh">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* ================= BASE (UNCHANGED STYLE) ================= */
 body { margin:0; font-family:'Roboto',sans-serif; color:#333; line-height:1.6; scroll-behavior: smooth; }
 a { text-decoration:none; color:inherit; }
+
 header { position:relative; background:url('images/bg.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px; }
 header::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:0; }
 header h1, header p, header .btn { position:relative; z-index:1; }
+
 header h1 {
-    font-size: 5rem;   /* fixed size */
+    font-size: 5rem;
     font-weight: 900;
     margin: 0;
-    line-height: 1;color: aqua;
+    line-height: 1;
+    color: aqua;
 }
+
 header p {
     font-size: 2rem;
     margin-top: 4px;
-    font-weight: 600;color:bisque;
+    font-weight: 600;
+    color:bisque;
 }
-header .btn { padding:12px 25px; margin:5px; border:none; border-radius:5px; cursor:pointer; font-weight:bold; transition: all 0.3s ease; }
-header .btn:hover { transform: scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.3); }
-.btn-primary { background:#fff; color:#1E40AF; }
-.btn-secondary { background:#FACC15; color:#1E40AF; }
+
+/* ================= BUTTONS ================= */
 .btn {
     display: inline-block;
     background: #25D366;
     color: white;
     padding: 14px 28px;
-    text-decoration: none;
     border-radius: 8px;
     margin: 12px 6px 0 6px;
     font-weight: bold;
-    transition: 0.3s;
-}
-.btn:hover {
-    background: #128c7e;
 }
 
-.btn-call {
-    background: #0a3d91;
-}
+.btn-call { background: #0a3d91; }
 
-.btn-call:hover {
-    background: #062a63;
-}
-
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.gallery-card {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   /* FIXED */
-    transition: transform 0.5s ease;
-}
-
-.gallery-card:hover img {
-    transform: scale(1.2);
-}
-
-/* overlay */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: white;
-    padding: 15px;
-    opacity: 0;
-    transition: 0.4s;
-}
-
-.gallery-card:hover .overlay {
-    opacity: 1;
-}
-.overlay h3 {
-    margin: 0;
-    font-size: 1.3rem;
-}
-
+/* ================= NAV ================= */
 nav#navbar {
     position: sticky;
     top: 0;
     background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    flex-wrap: wrap;
     padding: 10px 15px;
-    flex-wrap: wrap;
 }
-nav#navbar div {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-nav#navbar a { margin:0 15px; font-weight:bold; color:#1E40AF; transition: color 0.3s; }
-nav#navbar a:hover { color:#FACC15; }
 
+nav#navbar a {
+    margin:0 15px;
+    font-weight:bold;
+    color:#1E40AF;
+}
+
+/* ================= SECTIONS ================= */
 section { padding:60px 20px; text-align:center; }
 h2 { font-size:2rem; margin-bottom:40px; }
-.courses, .who-join-cards, .gallery-cards, .reviews-slider { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.course-card, .who-card, .gallery-card, .review-card { border-radius:12px; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; width:250px; transition: transform 0.3s, box-shadow 0.3s; }
-.course-card:hover, .review-card:hover, .gallery-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-#courses { background: linear-gradient(to right, #e0f2fe, #ffffff); }
-#reviews { background: linear-gradient(to right, #f0f0f0, #f8f8f8); overflow:hidden; }
-#certificate { background: linear-gradient(to right, #e0f2fe, #ffffff); }
+
+/* ================= CARDS BASE ================= */
+.courses,
+.who-join-cards,
+.gallery,
+.reviews-slider {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.course-card,
+.who-card,
+.review-card,
+.gallery-card {
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    width:250px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================= GALLERY ================= */
+.gallery-card {
+    position: relative;
+    height:220px;
+    overflow:hidden;
+}
+
+.gallery-card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color:white;
+    opacity:0;
+    transition:0.3s;
+}
+
+.gallery-card:hover .overlay { opacity:1; }
+
+/* ================= CONTACT ================= */
 .contact-info p { margin:10px 0; }
-footer { background:#1E40AF; color:white; padding:20px; text-align:center; }
-.whatsapp-float { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:28px; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,0.3); }
-.whatsapp-float:hover { transform:scale(1.1); transition:0.2s; }
-#top-contact-banner { position:fixed; top:0; left:0; width:100%; background:#FACC15; color:#1E40AF; display:flex; justify-content:center; align-items:center; padding:10px 0; z-index:2000; font-weight:bold; box-shadow:0 2px 8px rgba(0,0,0,0.2); cursor:pointer; transition: top 0.3s; }
-img { max-width:100%; border-radius:8px; }
-@media(max-width:768px){ .courses, .who-join-cards, .reviews-slider, .gallery-card {
-        width: 90%;
-        height: 180px;
+
+/* ================= WHATSAPP FLOAT ================= */
+.whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:white;
+}
+
+/* ================= IMAGE SAFETY ================= */
+img {
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+/* ================= CLEAN MOBILE FIX (FINAL ONLY) ================= */
+@media(max-width:768px){
+
+    header h1 { font-size:2rem; }
+    header p { font-size:1.2rem; }
+
+    nav#navbar {
+        flex-direction:column;
+        align-items:center;
     }
 
-    .overlay {
-        opacity: 1;
+    /* IMPORTANT: STACK EVERYTHING CLEANLY */
+    .course-card,
+    .who-card,
+    .review-card,
+    .gallery-card {
+        width:92%;
     }
 
-    .gallery-card:active img {
-        transform: scale(1.1);
+    /* REVIEWS FIX (NO OVERLAP, NO BREAK) */
+    .reviews-slider {
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
     }
-	.review-card { min-width:100%; } }
 
+    .review-card {
+        min-width:85%;
+        scroll-snap-align:center;
+    }
+
+    .btn {
+        width:90%;
+        text-align:center;
+    }
+}
+
+@media(max-width:480px){
+    header h1 { font-size:1.6rem; }
+    header p { font-size:1rem; }
+}
 </style>
 </head>
 <body>
@@ -296,7 +327,7 @@ img { max-width:100%; border-radius:8px; }
 <h2>Contact Us</h2>
 <div class="contact-info">
 <p>📞 Mobile & WhatsApp: <a href="https://wa.me/919414431916" target="_blank">9414431916</a></p>
-	<p>📞 Mobile: 9660800466</p>
+<p>📞 Mobile: 9660800466</p>
 <p>☎️ Landline: 01509-220406</p>
 <p>📍 Address: Ward No 29, Near Bansal Nursing Home, Suratgarh, Rajasthan, India</p>
 <p>👤 Owner: Adv Sunil Singhal</p>
